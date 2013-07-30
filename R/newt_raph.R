@@ -42,7 +42,7 @@ num_deriv <- function(fun, x, dx=10e-9, ...) {
 newt_raph <- function(fun,
                       dfun=NULL,
                       init=1,
-                      maxiter=50,
+                      maxiter=500,
                       tol=1e-10, 
                       ...
                       ) {
