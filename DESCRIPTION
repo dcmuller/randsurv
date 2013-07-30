@@ -1,0 +1,11 @@
+Package: randsurv
+Type: Package
+Title: Simulate survival times
+Version: 0.1
+Date: 2013-07-29
+Author: David C Muller <davidmull@gmail.com>
+Maintainer: David C Muller <davidmull@gmail.com>
+Description: This package provides a set of tools to simulate survival times.
+License: BSD 2-clause license
+Depends: Rcpp (>= 0.10.4)
+LinkingTo: Rcpp
