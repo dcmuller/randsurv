@@ -1,2 +1,2 @@
-useDynLib(randsurv)
-exportPattern("^[[:alpha:]]+")
+export(newt_raph)
+export(weibull_simp)
