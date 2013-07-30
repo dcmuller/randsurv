@@ -68,7 +68,7 @@ weibull_simp <- function(lambda0, p, cens_time, X = NULL , beta = NULL) {
 #' @description \code{weibull_compet2} simulates event times for two competing
 #' events given Weibull sub-hazards. Optionally, covariates and regression 
 #' coefficients (log hazard ratios) can be supplied for either or both of the
-#' competing events. See \code{\link{weibull_simple}} if you wish to sample
+#' competing events. See \code{\link{weibull_simp}} if you wish to sample
 #' survival times for one event in the absence of competing risks.
 #' 
 #' Note well that the rate and shape parameters of the Weibull sub-hazards do 
