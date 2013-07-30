@@ -16,5 +16,6 @@ observed_event <- function(t, lambda_1, p_1, lambda_2, p_2) {
   haz2 <- p_2 * lambda_2 * t^(p_2-1)
   pr1 <- haz1/(haz1 + haz2)
   event <- rbinom(length(t), 1, pr1)
+  event[event==0] <- 2
   return(event)
 }
