@@ -16,7 +16,7 @@
 
   \item{X}{optional matrix of regressors}
 
-  \item{beta}{optional vector or regression coefficients
+  \item{beta}{optional vector of regression coefficients
   (log hazard ratios)}
 }
 \description{
@@ -26,8 +26,8 @@
   coefficients (log hazard ratios) can be supplied. This
   function is simple in the sense that it assumes an
   absense of competing risks. See
-  \code{\link{weibull_compet}} if you wish to sample
-  survival times for competing events.
+  \code{\link{weibull_compet2}} if you wish to sample
+  survival times for two competing events.
 
   Note well that the rate and shape parameters do not
   correspond to those in the base function

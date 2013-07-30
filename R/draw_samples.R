@@ -99,7 +99,7 @@ weibull_simp <- function(lambda0, p, cens_time, X = NULL , beta = NULL) {
 #' beta2 <- c(log(3))
 #' fupdata <- weibull_compet2(lambda0 = c(10e-10, 10e-9), p = c(4.3, 4.2), 
 #'    cens_time=80, X_1 = X1, beta_1 = beta1, X_2 = X2, beta_2 = beta2)
-#' plot(survfit(Surv(fupdata$obs_time, fupdata$status==1) ~ X))
+#' plot(survfit(Surv(fupdata$obs_time, fupdata$status==1) ~ X1))
 #' 
 #' @author David C Muller
 weibull_compet2 <- function(lambda0, p, cens_time, 

@@ -2,7 +2,7 @@
 \alias{newt_raph}
 \title{Univariate root finding via the Newton-Raphson algorithm}
 \usage{
-  newt_raph(fun, dfun = NULL, init = 1, maxiter = 50,
+  newt_raph(fun, dfun = NULL, init = 1, maxiter = 500,
     tol = 1e-10, ...)
 }
 \arguments{
