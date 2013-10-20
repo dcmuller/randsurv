@@ -1,8 +1,8 @@
-\name{weibull_compet2}
-\alias{weibull_compet2}
+\name{weibull_compet}
+\alias{weibull_compet}
 \title{Sample event times from a Weibull distribution with competing risks}
 \usage{
-  weibull_compet2(lambda0, p, cens_time, X_1 = NULL,
+  weibull_compet(lambda0, p, cens_time, X_1 = NULL,
     beta_1 = NULL, X_2 = NULL, beta_2 = NULL)
 }
 \arguments{
@@ -28,7 +28,7 @@
   (log hazard ratios) for the second competing event}
 }
 \description{
-  \code{weibull_compet2} simulates event times for two
+  \code{weibull_compet} simulates event times for two
   competing events given Weibull sub-hazards. Optionally,
   covariates and regression coefficients (log hazard
   ratios) can be supplied for either or both of the
@@ -41,8 +41,8 @@
   base function \code{\link{rweibull}}. The parametrisation
   implemented here samples from a Weibull distribution with
   sub-hazard function \eqn{h(t) = p \lambda^{p-1}}{h(t) = p
-  * lambda^(p-1)}, where \eqn{\lambda =
-  lambda_0\exp(x\beta)}{lambda = lambda0 * exp(xb)}.
+  * \lambda^(p-1)}, where \eqn{\lambda =
+  \lambda_0\exp(x\beta)}{lambda = lambda0 * exp(xb)}.
 }
 \examples{
 require(survival)
@@ -50,7 +50,7 @@ X1 <- as.matrix(rbinom(1000, size = 1, prob = .5))
 X2 <- as.matrix(rbinom(1000, size = 1, prob = .1))
 beta1 <- c(log(2))
 beta2 <- c(log(3))
-fupdata <- weibull_compet2(lambda0 = c(10e-10, 10e-9), p = c(4.3, 4.2),
+fupdata <- weibull_compet(lambda0 = c(10e-10, 10e-9), p = c(4.3, 4.2),
    cens_time=80, X_1 = X1, beta_1 = beta1, X_2 = X2, beta_2 = beta2)
 plot(survfit(Surv(fupdata$obs_time, fupdata$status==1) ~ X1))
 }

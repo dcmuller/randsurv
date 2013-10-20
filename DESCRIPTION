@@ -6,13 +6,13 @@ Date: 2013-07-29
 Author: David C Muller <davidmull@gmail.com>
 Maintainer: David C Muller <davidmull@gmail.com>
 Description: This package provides a set of tools to simulate survival times.
-License: BSD 2-clause license
+License: BSD_2_clause + file LICENSE
 Depends:
     Rcpp (>= 0.10.4)
+Suggests:
+    survival(>= 2.0)
 LinkingTo: Rcpp
 Collate:
     'RcppExports.R'
     'draw_samples.R'
     'newt_raph.R'
-    'simple.R'
-    'compet.R'
