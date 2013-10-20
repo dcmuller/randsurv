@@ -58,7 +58,7 @@ weibull_simp <- function(lambda0, p, cens_time, X = NULL , beta = NULL) {
   }
   time <- pmin(ftime, cens_time)
   status <- as.numeric(time==ftime)
-  fup_frame <- data.frame(f_time <- ftime, obs_time = time, status = status)
+  fup_frame <- data.frame(f_time = ftime, obs_time = time, status = status)
   return(fup_frame)
 }
 
@@ -166,6 +166,6 @@ weibull_compet <- function(lambda0, p, cens_time,
   }
   time <- pmin(ftime, cens_time)
   status <- as.numeric(time==ftime)*event
-  fup_frame <- data.frame(f_time <- ftime, obs_time = time, status = status)
+  fup_frame <- data.frame(f_time = ftime, obs_time = time, status = status)
   return(fup_frame)
 }
