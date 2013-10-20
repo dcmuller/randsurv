@@ -26,7 +26,7 @@
   coefficients (log hazard ratios) can be supplied. This
   function is simple in the sense that it assumes an
   absense of competing risks. See
-  \code{\link{weibull_compet2}} if you wish to sample
+  \code{\link{weibull_compet}} if you wish to sample
   survival times for two competing events.
 
   Note well that the rate and shape parameters do not
@@ -34,8 +34,8 @@
   \code{\link{rweibull}}. The parametrisation implemented
   here samples from a Weibull distribution with hazard
   function \eqn{h(t) = p \lambda^{p-1}}{h(t) = p *
-  lambda^(p-1)}, where \eqn{\lambda =
-  lambda_0\exp(x\beta)}{lambda = lambda0 * exp(xb)}.
+  \lambda^(p-1)}, where \eqn{\lambda =
+  \lambda_0\exp(x\beta)}{lambda = lambda0 * exp(xb)}.
 }
 \examples{
 require(survival)

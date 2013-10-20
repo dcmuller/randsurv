@@ -5,14 +5,112 @@
 
 using namespace Rcpp;
 
-// rcpp_hello_world
-List rcpp_hello_world();
-RcppExport SEXP randsurv_rcpp_hello_world() {
+// surv_weibull
+double surv_weibull(double t, double lambda, double p, double rand_unif);
+RcppExport SEXP randsurv_surv_weibull(SEXP tSEXP, SEXP lambdaSEXP, SEXP pSEXP, SEXP rand_unifSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        List __result = rcpp_hello_world();
+        Rcpp::traits::input_parameter< double >::type t(tSEXP );
+        Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP );
+        Rcpp::traits::input_parameter< double >::type p(pSEXP );
+        Rcpp::traits::input_parameter< double >::type rand_unif(rand_unifSEXP );
+        double __result = surv_weibull(t, lambda, p, rand_unif);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// ddt_surv_weibull
+double ddt_surv_weibull(double t, double lambda, double p, double rand_unif);
+RcppExport SEXP randsurv_ddt_surv_weibull(SEXP tSEXP, SEXP lambdaSEXP, SEXP pSEXP, SEXP rand_unifSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< double >::type t(tSEXP );
+        Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP );
+        Rcpp::traits::input_parameter< double >::type p(pSEXP );
+        Rcpp::traits::input_parameter< double >::type rand_unif(rand_unifSEXP );
+        double __result = ddt_surv_weibull(t, lambda, p, rand_unif);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// inv_weibull
+double inv_weibull(double lambda, double p, double rand_unif);
+RcppExport SEXP randsurv_inv_weibull(SEXP lambdaSEXP, SEXP pSEXP, SEXP rand_unifSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP );
+        Rcpp::traits::input_parameter< double >::type p(pSEXP );
+        Rcpp::traits::input_parameter< double >::type rand_unif(rand_unifSEXP );
+        double __result = inv_weibull(lambda, p, rand_unif);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// surv_weibull_compet
+double surv_weibull_compet(double t, double lambda_1, double p_1, double lambda_2, double p_2, double rand_unif);
+RcppExport SEXP randsurv_surv_weibull_compet(SEXP tSEXP, SEXP lambda_1SEXP, SEXP p_1SEXP, SEXP lambda_2SEXP, SEXP p_2SEXP, SEXP rand_unifSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< double >::type t(tSEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_1(lambda_1SEXP );
+        Rcpp::traits::input_parameter< double >::type p_1(p_1SEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_2(lambda_2SEXP );
+        Rcpp::traits::input_parameter< double >::type p_2(p_2SEXP );
+        Rcpp::traits::input_parameter< double >::type rand_unif(rand_unifSEXP );
+        double __result = surv_weibull_compet(t, lambda_1, p_1, lambda_2, p_2, rand_unif);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// ddt_surv_weibull_compet
+double ddt_surv_weibull_compet(double t, double lambda_1, double p_1, double lambda_2, double p_2, double rand_unif);
+RcppExport SEXP randsurv_ddt_surv_weibull_compet(SEXP tSEXP, SEXP lambda_1SEXP, SEXP p_1SEXP, SEXP lambda_2SEXP, SEXP p_2SEXP, SEXP rand_unifSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< double >::type t(tSEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_1(lambda_1SEXP );
+        Rcpp::traits::input_parameter< double >::type p_1(p_1SEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_2(lambda_2SEXP );
+        Rcpp::traits::input_parameter< double >::type p_2(p_2SEXP );
+        Rcpp::traits::input_parameter< double >::type rand_unif(rand_unifSEXP );
+        double __result = ddt_surv_weibull_compet(t, lambda_1, p_1, lambda_2, p_2, rand_unif);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+// observed_event
+int observed_event(double t, double lambda_1, double p_1, double lambda_2, double p_2);
+RcppExport SEXP randsurv_observed_event(SEXP tSEXP, SEXP lambda_1SEXP, SEXP p_1SEXP, SEXP lambda_2SEXP, SEXP p_2SEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< double >::type t(tSEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_1(lambda_1SEXP );
+        Rcpp::traits::input_parameter< double >::type p_1(p_1SEXP );
+        Rcpp::traits::input_parameter< double >::type lambda_2(lambda_2SEXP );
+        Rcpp::traits::input_parameter< double >::type p_2(p_2SEXP );
+        int __result = observed_event(t, lambda_1, p_1, lambda_2, p_2);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
