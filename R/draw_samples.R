@@ -52,7 +52,7 @@ weibull_simp <- function(lambda0, p, cens_time, X = NULL , beta = NULL) {
   else {
     lambda <- lambda0 * exp(X %*% beta)
   }
-  ftime <- vector(mode="numeric", length=nrow(X))
+  ftime <- vector(mode="numeric", length=length(lambda))
   for (i in 1:length(ftime)) {
   ftime[i] <- inv_weibull(lambda[i], p, rand_unif=runif(1))
   }
@@ -141,13 +141,13 @@ weibull_compet <- function(lambda0, p, cens_time,
     )
   }
   else if (is.null(X_2) && is.null(beta_2)) { 
-    lambda_2 <- lambda0[2]
+    lambda_2 <- rep(lambda0[2], length(lambda_1))
   }
   else {
     lambda_2 <- lambda0[2] * exp(X_2 %*% beta_2)
   }
-  ftime <- vector(mode="numeric", length=nrow(X_1))
-  event <- vector(mode="numeric", length=nrow(X_1))
+  ftime <- vector(mode="numeric", length=length(lambda_1))
+  event <- vector(mode="numeric", length=length(lambda_1))
   for (i in 1:length(ftime)) {
     ftime[i] <- nrsolve_surv_weibull_compet(lambda_1 = lambda_1[i],
                                             p_1 = p[1],
