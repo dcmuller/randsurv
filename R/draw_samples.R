@@ -54,7 +54,7 @@ weibull_simp <- function(lambda0, p, cens_time, X = NULL , beta = NULL) {
   }
   ftime <- vector(mode="numeric", length=nrow(X))
   for (i in 1:length(ftime)) {
-     ftime[i] <- inv_weibull(lambda[i], p, rand_unif=runif(1))
+  ftime[i] <- inv_weibull(lambda[i], p, rand_unif=runif(1))
   }
   time <- pmin(ftime, cens_time)
   status <- as.numeric(time==ftime)
@@ -149,13 +149,11 @@ weibull_compet <- function(lambda0, p, cens_time,
   ftime <- vector(mode="numeric", length=nrow(X_1))
   event <- vector(mode="numeric", length=nrow(X_1))
   for (i in 1:length(ftime)) {
-    ftime[i] <- newt_raph(randsurv:::surv_weibull_compet, # S(t) 
-                          randsurv:::ddt_surv_weibull_compet, # dS(t)/dt
-                          lambda_1 = lambda_1[i],
-                          p_1 = p[1],
-                          lambda_2 = lambda_2[i],
-                          p_2 = p[2], 
-                          rand_unif = runif(1)
+    ftime[i] <- nrsolve_surv_weibull_compet(lambda_1 = lambda_1[i],
+                                            p_1 = p[1],
+                                            lambda_2 = lambda_2[i],
+                                            p_2 = p[2],
+                                            rand_unif = runif(1) 
     )
     event[i] <- observed_event(t = ftime[i], 
                                lambda_1 = lambda_1[i], 
