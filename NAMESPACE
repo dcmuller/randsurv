@@ -1,4 +1,3 @@
 useDynLib(randsurv)
-export(newt_raph)
 export(weibull_compet)
 export(weibull_simp)

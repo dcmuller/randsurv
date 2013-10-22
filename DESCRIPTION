@@ -15,4 +15,3 @@ LinkingTo: Rcpp
 Collate:
     'RcppExports.R'
     'draw_samples.R'
-    'newt_raph.R'
