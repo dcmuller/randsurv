@@ -5,8 +5,8 @@ surv_weibull <- function(t, lambda, p, rand_unif) {
     .Call('randsurv_surv_weibull', PACKAGE = 'randsurv', t, lambda, p, rand_unif)
 }
 
-ddt_surv_weibull <- function(t, lambda, p, rand_unif) {
-    .Call('randsurv_ddt_surv_weibull', PACKAGE = 'randsurv', t, lambda, p, rand_unif)
+nrsolve_surv_weibull <- function(lambda, p, rand_unif, init_t = 1, tol = 1e-10, maxiter = 500L) {
+    .Call('randsurv_nrsolve_surv_weibull', PACKAGE = 'randsurv', lambda, p, rand_unif, init_t, tol, maxiter)
 }
 
 inv_weibull <- function(lambda, p, rand_unif) {
@@ -15,6 +15,10 @@ inv_weibull <- function(lambda, p, rand_unif) {
 
 surv_weibull_compet <- function(t, lambda_1, p_1, lambda_2, p_2, rand_unif) {
     .Call('randsurv_surv_weibull_compet', PACKAGE = 'randsurv', t, lambda_1, p_1, lambda_2, p_2, rand_unif)
+}
+
+nrsolve_surv_weibull_compet <- function(lambda_1, p_1, lambda_2, p_2, rand_unif, init_t = 1, tol = 1e-10, maxiter = 500L) {
+    .Call('randsurv_nrsolve_surv_weibull_compet', PACKAGE = 'randsurv', lambda_1, p_1, lambda_2, p_2, rand_unif, init_t, tol, maxiter)
 }
 
 ddt_surv_weibull_compet <- function(t, lambda_1, p_1, lambda_2, p_2, rand_unif) {
