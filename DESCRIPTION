@@ -10,7 +10,7 @@ License: BSD_2_clause + file LICENSE
 Depends:
     Rcpp (>= 0.10.4)
 Suggests:
-    survival(>= 2.0)
+    survival
 LinkingTo: Rcpp
 Collate:
     'RcppExports.R'
